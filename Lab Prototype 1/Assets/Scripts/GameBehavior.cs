@@ -35,7 +35,6 @@ public class GameBehavior : MonoBehaviour
             timer += Time.deltaTime;
             timeText.text = $"Time Elapsed: {timer}s";
         }
-
     }
 
     void StartTheGame()

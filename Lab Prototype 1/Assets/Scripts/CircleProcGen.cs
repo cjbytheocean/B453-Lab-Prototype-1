@@ -28,15 +28,13 @@ public class CircleProcGen : MonoBehaviour
     void CircleGeneration()
     {
         spawnPositions.Clear();
-        Debug.Log(spawnPositions.Count);
-
+        
         int t = 0;
 
         while (spawnPositions.Count < 1 && t < 5000)
         {
             t++;
             
-
             float xPosition = Random.Range(minimum.x + wallMargin, maximum.x - wallMargin);
             float yPosition = Random.Range(minimum.y + wallMargin, maximum.y - wallMargin);
 

@@ -7,7 +7,6 @@ public class Restart : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("pressed R");
             RestartGame();
         }
     }

@@ -12,7 +12,7 @@ public class ClickedCircle : MonoBehaviour
     {
         gb.timerRunning = false;
 
-        if (gb.timer > gb.highScore)
+        if (gb.timer < gb.highScore)
         {
             gb.highScore = gb.timer;
             JSONManager.instance.SaveData();

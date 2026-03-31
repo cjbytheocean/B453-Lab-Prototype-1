@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class GameBehavior : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameBehavior : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] GameObject instructionsText;
 
+    public float timer = 0f;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.S) && !gameStarted)
@@ -16,12 +19,18 @@ public class GameBehavior : MonoBehaviour
             gameStarted = true;
             StartTheGame();
         }
+
+        if (timerRunning)
+        {
+            timer += Time.deltaTime;
+            timeText.text = $"Time Elapsed: {timer}s";
+        }
+
     }
 
     void StartTheGame()
     {
         instructionsText.SetActive(false);
-
-        
+        timerRunning = true;
     }
 }

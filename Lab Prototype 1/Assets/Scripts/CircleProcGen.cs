@@ -26,12 +26,15 @@ public class CircleProcGen : MonoBehaviour
     void CircleGeneration()
     {
         spawnPositions.Clear();
+        Debug.Log(spawnPositions.Count);
 
         int t = 0;
 
         while (spawnPositions.Count < 1 && t < 5000)
+        
         {
             t++;
+            Debug.
 
             float xPosition = Random.Range(minimum.x + wallMargin, maximum.x - wallMargin);
             float yPosition = Random.Range(minimum.y + wallMargin, maximum.y - wallMargin);
@@ -47,6 +50,7 @@ public class CircleProcGen : MonoBehaviour
         for (int i = 0; i < spawnPositions.Count; i++)
         {
             Instantiate(circles[i], spawnPositions[i], Quaternion.identity);
+            Debug.Log("circle printed");
         } 
     }
 

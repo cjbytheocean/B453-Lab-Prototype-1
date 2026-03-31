@@ -1,16 +1,27 @@
 using UnityEngine;
+using TMPro;
 
 public class GameBehavior : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public bool gameStarted = false;
+    public bool timerRunning = false;
+    public bool circleClicked = false;
+    [SerializeField] TextMeshProUGUI timeText;
+    [SerializeField] GameObject instructionsText;
 
-    // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.S) && !gameStarted)
+        {
+            gameStarted = true;
+            StartTheGame();
+        }
+    }
+
+    void StartTheGame()
+    {
+        instructionsText.SetActive(false);
+
         
     }
 }
